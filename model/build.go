@@ -1,8 +1,9 @@
 package model
 
 type Build struct {
-	Parent    *Build    `json:"-"`
-	BuildFile string    `json:"buildFile"`
-	Artifact  *Artifact `json:"artifact"`
-	Children  []*Build  `json:"children"`
+	Parent       *Build        `yaml:"-" json:"-"`
+	BuildFile    string        `yaml:"-" json:"buildFile"`
+	Artifact     *Artifact     `         json:"artifact"`
+	Dependencies []*Dependency `         json:"dependencies"`
+	Children     []*Build      `yaml:"-" json:"children"`
 }
